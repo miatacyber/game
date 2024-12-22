@@ -1,0 +1,32 @@
+import random
+
+def guess_number_game():
+    print("欢迎来到猜数字游戏！")
+    print("我已经想好了一个1到100之间的数字。")
+    print("你有7次机会来猜。")
+
+    number_to_guess = random.randint(1, 100)
+    attempts = 7
+
+    while attempts > 0:
+        try:
+            guess = int(input("请输入你的猜测: "))
+        except ValueError:
+            print("请输入一个有效的数字！")
+            continue
+
+        if guess == number_to_guess:
+            print("恭喜你，猜对了！🎉")
+            break
+        elif guess < number_to_guess:
+            print("太小了！")
+        else:
+            print("太大了！")
+
+        attempts -= 1
+        print(f"你还有{attempts}次机会。")
+
+    if attempts == 0:
+        print(f"很遗憾，你没有猜对。答案是: {number_to_guess}")
+
+guess_number_game()

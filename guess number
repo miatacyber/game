@@ -6,7 +6,7 @@ def guess_number_game():
     print("你有7次机会来猜")
 
     number_to_guess = random.randint(1, 100)
-    attempts = 7
+    attempts = 6
 
     while attempts > 0:
         try:
